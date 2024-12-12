@@ -11,19 +11,19 @@ const Sidebar: React.FC = () => {
       </h1>
       <nav className="flex-1">
         <ul>
-          <li className="px-4 py-3 hover:bg-blue-700 cursor-pointer">Inicio</li>
-          <li className="px-4 py-3 hover:bg-blue-700 cursor-pointer">Clientes</li>
-          <li className="px-4 py-3 hover:bg-blue-700 cursor-pointer">Mapa de clientes</li>
-          <li className="px-4 py-3 hover:bg-blue-700 cursor-pointer">Monitoreo de Distribuidores</li>
-          <li className="px-4 py-3 hover:bg-blue-700 cursor-pointer">Ventas</li>
-          <li className="px-4 py-3 hover:bg-blue-700 cursor-pointer">Pedidos</li>
-          <li className="px-4 py-3 hover:bg-blue-700 cursor-pointer">Préstamos</li>
-          <li className="px-4 py-3 hover:bg-blue-700 cursor-pointer">Finanzas</li>
-          <li className="px-4 py-3 hover:bg-blue-700 cursor-pointer">Reportes</li>
-          <li className="px-4 py-3 hover:bg-blue-700 cursor-pointer">Configuracion</li>
+          <li className="px-4 py-3 border border-transparent hover:bg-white hover:text-black hover:border-blue-700 cursor-pointer">Inicio</li>
+          <li className="px-4 py-3 border border-transparent hover:bg-white hover:text-black hover:border-blue-700 cursor-pointer">Clientes</li>
+          <li className="px-4 py-3 border border-transparent hover:bg-white hover:text-black hover:border-blue-700 cursor-pointer">Mapa de clientes</li>
+          <li className="px-4 py-3 border border-transparent hover:bg-white hover:text-black hover:border-blue-700 cursor-pointer">Monitoreo de Distribuidores</li>
+          <li className="px-4 py-3 border border-transparent hover:bg-white hover:text-black hover:border-blue-700 cursor-pointer">Ventas</li>
+          <li className="px-4 py-3 border border-transparent hover:bg-white hover:text-black hover:border-blue-700 cursor-pointer">Pedidos</li>
+          <li className="px-4 py-3 border border-transparent hover:bg-white hover:text-black hover:border-blue-700 cursor-pointer">Préstamos</li>
+          <li className="px-4 py-3 border border-transparent hover:bg-white hover:text-black hover:border-blue-700 cursor-pointer">Finanzas</li>
+          <li className="px-4 py-3 border border-transparent hover:bg-white hover:text-black hover:border-blue-700 cursor-pointer">Reportes</li>
+          <li className="px-4 py-3 border border-transparent hover:bg-white hover:text-black hover:border-blue-700 cursor-pointer">Configuracion</li>
         </ul>
       </nav>
-      <button className="mt-auto px-4 py-3 bg-red-600 hover:bg-red-500">Salir</button>
+      <button className="mt-auto px-4 py-3 bg-white hover:bg-blue-300 text-black">Salir</button>
     </aside>
   );
 };

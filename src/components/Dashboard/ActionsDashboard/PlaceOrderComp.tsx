@@ -49,10 +49,9 @@ const OrderForm: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md p-6 bg-white rounded-lg shadow-lg">
+    <div className="w-[447px] p-6 bg-white rounded-lg shadow-lg">
       <h2 className="mb-4 text-lg font-bold text-gray-800">Realizar pedido</h2>
 
-      {/* Cliente */}
       <div className="mb-4">
         <label
           htmlFor="client"
@@ -66,9 +65,9 @@ const OrderForm: React.FC = () => {
           value={selectedClient}
           onChange={handleClientChange}
         >
-          <option value="" disabled>
+{/*           <option value="" disabled>
             Seleccione un cliente
-          </option>
+          </option> */}
           {clientOptions.map((option) => (
             <option key={option.id} value={option.id}>
               {option.label}
@@ -77,7 +76,6 @@ const OrderForm: React.FC = () => {
         </select>
       </div>
 
-      {/* Producto */}
       <div className="mb-4">
         <label
           htmlFor="product"
@@ -91,9 +89,9 @@ const OrderForm: React.FC = () => {
           value={selectedProduct}
           onChange={handleProductChange}
         >
-          <option value="" disabled>
+          {/* <option value="" disabled>
             Seleccione un producto
-          </option>
+          </option> */}
           {productOptions.map((option) => (
             <option key={option.id} value={option.id}>
               {option.label}
@@ -102,7 +100,6 @@ const OrderForm: React.FC = () => {
         </select>
       </div>
 
-      {/* Cantidad */}
       <div className="mb-4">
         <label className="block mb-2 text-sm font-medium text-gray-700">
           Cantidad
@@ -132,8 +129,6 @@ const OrderForm: React.FC = () => {
           <span className="text-gray-700">Bs</span>
         </div>
       </div>
-
-      {/* Botón */}
       <button
         onClick={handleSubmit}
         className="w-full px-4 py-2 text-white bg-blue-500 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
