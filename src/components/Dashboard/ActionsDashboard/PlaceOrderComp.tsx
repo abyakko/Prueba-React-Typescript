@@ -19,13 +19,12 @@ const OrderForm: React.FC = () => {
     { id: 3, label: "Botella de 1 Lt" },
   ];
 
-  // Estados
+
   const [selectedClient, setSelectedClient] = useState<number | "">("");
   const [selectedProduct, setSelectedProduct] = useState<number | "">("");
   const [quantity, setQuantity] = useState<number>(1);
   const [price] = useState<number>(15); // Precio fijo como ejemplo
 
-  // Manejar cambios
   const handleClientChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedClient(Number(e.target.value));
   };
@@ -41,33 +40,23 @@ const OrderForm: React.FC = () => {
     });
   };
 
-  const handleSubmit = () => {
-    console.log("Cliente:", selectedClient);
-    console.log("Producto:", selectedProduct);
-    console.log("Cantidad:", quantity);
-    console.log("Total:", quantity * price);
-  };
+
+  const handleSubmit = (): void => {
+  alert(`Cliente: ${selectedClient}\nProducto: ${selectedProduct}\nCantidad: ${quantity}\nTotal: ${quantity * price} Bs`);
+};
+
 
   return (
-    <div className="w-[447px] p-6 bg-white rounded-lg shadow-lg">
+    <div className="w-[447px] h-64 p-3 bg-white rounded-lg shadow-lg">
       <h2 className="mb-4 text-lg font-bold text-gray-800">Realizar pedido</h2>
 
       <div className="mb-4">
-        <label
-          htmlFor="client"
-          className="block mb-2 text-sm font-medium text-gray-700"
-        >
-          Cliente
-        </label>
         <select
           id="client"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
+          className="w-full h-9 px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
           value={selectedClient}
           onChange={handleClientChange}
         >
-{/*           <option value="" disabled>
-            Seleccione un cliente
-          </option> */}
           {clientOptions.map((option) => (
             <option key={option.id} value={option.id}>
               {option.label}
@@ -77,21 +66,12 @@ const OrderForm: React.FC = () => {
       </div>
 
       <div className="mb-4">
-        <label
-          htmlFor="product"
-          className="block mb-2 text-sm font-medium text-gray-700"
-        >
-          Producto
-        </label>
         <select
           id="product"
           className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-300"
           value={selectedProduct}
           onChange={handleProductChange}
         >
-          {/* <option value="" disabled>
-            Seleccione un producto
-          </option> */}
           {productOptions.map((option) => (
             <option key={option.id} value={option.id}>
               {option.label}
@@ -100,41 +80,50 @@ const OrderForm: React.FC = () => {
         </select>
       </div>
 
-      <div className="mb-4">
-        <label className="block mb-2 text-sm font-medium text-gray-700">
-          Cantidad
+      <div className="flex mb-4 gap-10">
+        <div className=" p-1 h-9 justify-center w-64 border border-gray-300 rounded-lg shadow-sm flex items-center space-x-2">
+        <label className=" mb-2 text-sm font-medium text-gray-700 w-32">
+          Cantidad:
         </label>
-        <div className="flex items-center space-x-2">
           <button
             onClick={() => handleQuantityChange("decrement")}
-            className="px-3 py-2 text-gray-700 bg-gray-200 rounded-full focus:outline-none"
+            className="px-3 text-gray-700 bg-gray-200 rounded-full focus:outline-none"
           >
             -
           </button>
-          <span className="px-4 py-2 text-lg font-medium text-gray-800 bg-gray-100 border rounded-md">
+          <span className="px-4  text-lg font-medium text-gray-800 bg-gray-100 border rounded-md">
             {quantity}
           </span>
           <button
             onClick={() => handleQuantityChange("increment")}
-            className="px-3 py-2 text-gray-700 bg-gray-200 rounded-full focus:outline-none"
+            className="px-3  text-gray-700 bg-gray-200 rounded-full focus:outline-none"
           >
             +
           </button>
+        </div>
+          <div className="gap-16 w-32 flex items-center border border-gray-300 rounded-lg shadow-sm">
+
           <input
             type="text"
             value={quantity * price}
             disabled
-            className="px-3 py-2 text-right bg-gray-100 border rounded-md w-16"
+            className=" ml-2 text-right bg-gray-100 border rounded-md w-6"
           />
-          <span className="text-gray-700">Bs</span>
-        </div>
+          <div className="">
+
+          <span className="ml-2 text-gray-700 ">Bs</span>
+          </div>
+          </div>
       </div>
+      <div className="flex justify-end">
+
       <button
         onClick={handleSubmit}
-        className="w-full px-4 py-2 text-white bg-blue-500 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
+        className="h-9 w-32 text-xs px-4 py-2 font-bold text-white bg-blue-500 rounded-full shadow-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
       >
         Realizar pedido
       </button>
+      </div>
     </div>
   );
 };
