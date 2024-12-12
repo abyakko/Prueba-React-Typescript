@@ -23,7 +23,7 @@ const OrderForm: React.FC = () => {
   const [selectedClient, setSelectedClient] = useState<number | "">("");
   const [selectedProduct, setSelectedProduct] = useState<number | "">("");
   const [quantity, setQuantity] = useState<number>(1);
-  const [price] = useState<number>(15); // Precio fijo como ejemplo
+  const [price] = useState<number>(15); // Precio de cada producto
 
   const handleClientChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedClient(Number(e.target.value));
